@@ -102,11 +102,7 @@ La instancia del proceso se creará automáticamente.
 
 # Compilar el proyecto
 
-Ir al backend:
-
-```bash
-cd backend
-```
+En la **terminal**, desde la **raíz del repositorio** ejecuta `cd backend`. Luego:
 
 Compilar:
 

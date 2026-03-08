@@ -118,11 +118,7 @@ El resultado se mostrará en la consola.
 
 # Compilar el proyecto
 
-Ir al backend:
-
-```bash
-cd backend
-```
+En la **terminal**, desde la **raíz del repositorio** ejecuta `cd backend`. Luego:
 
 Compilar el proyecto:
 
