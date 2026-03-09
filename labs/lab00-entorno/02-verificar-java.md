@@ -73,7 +73,32 @@ javac 17.x.x
 Si la versión mostrada **no es Java 17** (por ejemplo 11, 8 o 21), debes instalar o configurar Java 17 **antes de seguir**:
 
 - **GitHub Codespaces**: normalmente ya viene con Java 17. Si ves otra versión, abre el fichero `.devcontainer` o las opciones de Codespaces del repo y selecciona una imagen con **Java 17** (consulta la documentación de tu organización si aplica).
-- **Linux (Ubuntu/Debian)**: puedes instalar OpenJDK 17 con:
+- **Linux / macOS con SDKMAN! (recomendado en entornos de desarrollo)**:
+
+  1. Instala SDKMAN! (si no lo tienes):
+
+     ```bash
+     curl -s "https://get.sdkman.io" | bash
+     source "$HOME/.sdkman/bin/sdkman-init.sh"
+     ```
+
+  2. Instala Java 17 y márcalo como **default**:
+
+     ```bash
+     sdk install java 17
+     sdk default java 17
+     ```
+
+     (Si SDKMAN! te muestra varias distribuciones de Java 17, elige una LTS, por ejemplo Temurin).
+
+  3. Comprueba de nuevo:
+
+     ```bash
+     java -version
+     javac -version
+     ```
+
+- **Linux (Ubuntu/Debian) sin SDKMAN!**: puedes instalar OpenJDK 17 con:
 
   ```bash
   sudo apt update
@@ -87,8 +112,8 @@ Si la versión mostrada **no es Java 17** (por ejemplo 11, 8 o 21), debes instal
   sudo update-alternatives --config javac
   ```
 
-  Elige en cada lista la opción que apunte a la ruta de **java 17**. Después vuelve a ejecutar `java -version` y `javac -version` para confirmar que ya estás en la versión 17.
-- **Otros sistemas (Windows, macOS, otras distros)**: instala **Java 17 (JDK)** desde una distribución oficial (por ejemplo Temurin, Oracle JDK u OpenJDK) y asegúrate de que el `PATH` apunta a esa versión. Si trabajas en un entorno corporativo, sigue la guía estándar de tu equipo para instalar Java 17.
+  Elige en cada lista la opción que apunte a la ruta de **java 17** y vuelve a ejecutar `java -version` y `javac -version`.
+- **Otros sistemas (Windows, macOS sin SDKMAN!, otras distros)**: instala **Java 17 (JDK)** desde una distribución oficial (por ejemplo Temurin, Oracle JDK u OpenJDK) y asegúrate de que el `PATH` apunta a esa versión. Si trabajas en un entorno corporativo, sigue la guía estándar de tu equipo para instalar Java 17.
 
 
 ---
