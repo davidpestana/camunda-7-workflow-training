@@ -25,6 +25,8 @@ Cockpit permite:
 * analizar el estado del motor
 * investigar errores o incidentes
 
+**Referencia — Cómo diseñar el proceso y subirlo:** Para que Cockpit muestre procesos e instancias (y Tasklist muestre tareas humanas), hace falta un BPMN con al menos una User Task desplegado en la aplicación. Cómo diseñarlo en **Camunda Modeler** y copiarlo/desplegarlo en el proyecto se explica en el **Lab 04 — Modelado de procesos** (crear modelo, eventos, Service Task, User Task y despliegue en `05-despliegue-proceso.md`). **Para que este lab funcione**, el modelo que debes ejecutar es el **approval** entregado en el repositorio: copia `model/approval-process.bpmn` a `workflow-app/src/main/resources/processes/` y arranca la aplicación; así verás el proceso en Cockpit (y, al iniciar una instancia, tareas en Tasklist).
+
 ---
 
 # Arrancar la aplicación
