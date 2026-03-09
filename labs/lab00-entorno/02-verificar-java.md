@@ -80,7 +80,14 @@ Si la versión mostrada **no es Java 17** (por ejemplo 11, 8 o 21), debes instal
   sudo apt install -y openjdk-17-jdk
   ```
 
-  Después vuelve a ejecutar `java -version` y `javac -version` para confirmar que ya estás en la versión 17.
+  Si tienes **varias versiones de Java instaladas**, deja **Java 17 como versión por defecto**:
+
+  ```bash
+  sudo update-alternatives --config java
+  sudo update-alternatives --config javac
+  ```
+
+  Elige en cada lista la opción que apunte a la ruta de **java 17**. Después vuelve a ejecutar `java -version` y `javac -version` para confirmar que ya estás en la versión 17.
 - **Otros sistemas (Windows, macOS, otras distros)**: instala **Java 17 (JDK)** desde una distribución oficial (por ejemplo Temurin, Oracle JDK u OpenJDK) y asegúrate de que el `PATH` apunta a esa versión. Si trabajas en un entorno corporativo, sigue la guía estándar de tu equipo para instalar Java 17.
 
 
