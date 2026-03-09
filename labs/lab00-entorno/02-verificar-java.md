@@ -82,16 +82,26 @@ Si la versión mostrada **no es Java 17** (por ejemplo 11, 8 o 21), debes instal
      source "$HOME/.sdkman/bin/sdkman-init.sh"
      ```
 
-  2. Instala Java 17 y márcalo como **default**:
+  2. Lista las versiones disponibles de Java 17 y elige una:
 
      ```bash
-     sdk install java 17
-     sdk default java 17
+     sdk list java
      ```
 
-     (Si SDKMAN! te muestra varias distribuciones de Java 17, elige una LTS, por ejemplo Temurin).
+     Busca una versión **17 LTS** de una distribución habitual (por ejemplo Temurin) con un identificador similar a:
 
-  3. Comprueba de nuevo:
+     ```text
+     17.0.8-tem
+     ```
+
+  3. Instala esa versión concreta y márcala como **default** (sustituye por el identificador que hayas elegido):
+
+     ```bash
+     sdk install java 17.0.8-tem
+     sdk default java 17.0.8-tem
+     ```
+
+  4. Comprueba de nuevo:
 
      ```bash
      java -version
