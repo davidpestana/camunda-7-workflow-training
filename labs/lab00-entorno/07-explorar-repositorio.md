@@ -7,7 +7,7 @@ Comprender la estructura del repositorio que se utilizará durante todo el curso
 Antes de empezar a trabajar con Camunda es importante identificar dónde se encuentran:
 
 * los laboratorios
-* el backend de la aplicación
+* la aplicación (workflow-app)
 * los modelos BPMN
 * los archivos de infraestructura
 
@@ -26,7 +26,7 @@ Deberías ver una estructura similar a esta:
 ```
 .
 ├── README.md
-├── backend
+├── workflow-app
 ├── docs
 ├── infra
 ├── labs
@@ -49,9 +49,11 @@ Describe:
 
 ---
 
-### backend
+### workflow-app
 
 Contiene la **aplicación Spring Boot** donde se ejecutará el motor Camunda.
+
+**La carpeta workflow-app la creaste tú en el paso 04** (Crear el proyecto). No viene en el repositorio; es el proyecto que irás modificando durante el curso.
 
 Aquí se encuentra:
 
@@ -134,9 +136,10 @@ lab00-entorno
 ├── 01-instalar-extensiones-vscode.md
 ├── 02-verificar-java.md
 ├── 03-verificar-maven.md
-├── 04-explorar-repositorio.md
+├── 04-crear-proyecto-backend.md
 ├── 05-compilar-proyecto.md
 ├── 06-arrancar-aplicacion.md
+├── 07-explorar-repositorio.md
 └── README.md
 ```
 
@@ -151,6 +154,6 @@ Antes de continuar asegúrate de poder:
 * navegar por el repositorio en VS Code
 * abrir archivos `.md`
 * localizar el directorio `labs`
-* localizar el directorio `backend`
+* localizar el directorio `workflow-app`
 
 Una vez entendido el repositorio podemos continuar con el siguiente paso del laboratorio.

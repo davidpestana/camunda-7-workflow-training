@@ -2,32 +2,22 @@
 
 ## 🎯 Objetivo
 
-Ejecutar la aplicación **Spring Boot** para verificar que el backend se inicia correctamente.
+Ejecutar la aplicación **Spring Boot** (workflow-app) para verificar que el backend se inicia correctamente.
 
 ---
 
 ## 🧠 Contexto
 
-La aplicación backend contiene:
-
-* el motor de procesos **Camunda**
-* la aplicación **Spring Boot**
-* la configuración del proyecto
-
-Al arrancar la aplicación se iniciará:
-
-* servidor web
-* motor Camunda
-* base de datos embebida
+En el paso 04 generaste **workflow-app** con el archetype de Camunda. Al arrancar puede que la aplicación inicie el servidor (y el motor, si el archetype incluyó ya la configuración de BD) o que falle por falta de configuración de base de datos. **Si no arranca**, lo normal; en el **lab03** configurarás las dependencias y **application.properties** y la aplicación arrancará correctamente.
 
 ---
 
-## 📍 Ir al directorio del backend
+## 📍 Ir al directorio workflow-app
 
-Abre una **terminal** en VS Code (menú **Terminal** → **New Terminal**). Desde la **raíz del repositorio** (donde están README, **labs** y **backend**), ejecuta:
+Abre una **terminal** en VS Code (menú **Terminal** → **New Terminal**). Desde la **raíz del repositorio** (donde están README, **labs** y **workflow-app**), ejecuta:
 
 ```bash
-cd backend
+cd workflow-app
 ```
 
 ---
@@ -44,14 +34,22 @@ mvn spring-boot:run
 
 ## 📦 Qué ocurre al arrancar
 
-Durante el arranque se inicializan varios componentes:
+Ejecuta `mvn spring-boot:run`. Si arranca, verás el servidor (y el motor Camunda si ya está configurado).
 
-* Spring Boot Application
-* Camunda Process Engine
-* Base de datos H2
-* Servidor web embebido
+**Si no arranca** (p. ej. error de datasource o de configuración de BD): abre **workflow-app/src/main/resources/application.properties** y asegúrate de tener al menos esta configuración (añade lo que falte):
 
-En la terminal aparecerán mensajes de inicio del sistema.
+```properties
+server.port=8080
+
+spring.datasource.url=jdbc:h2:mem:camunda;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.hibernate.ddl-auto=update
+```
+
+Guarda y ejecuta de nuevo `mvn spring-boot:run`. En el **lab03** revisarás el pom y esta configuración con más detalle.
 
 ---
 
@@ -89,8 +87,4 @@ CTRL + C
 
 ## ✅ Comprobación
 
-El paso se considera completado cuando:
-
-* el comando `mvn spring-boot:run` inicia la aplicación sin errores
-* el servidor arranca correctamente
-* la terminal muestra que la aplicación está escuchando en el puerto **8080**.
+El paso se considera completado cuando has ejecutado `mvn spring-boot:run`. Si **arranca**, comprueba que escucha en el puerto **8080**. Si **no arrancaba** y aplicaste el workaround de **application.properties** (H2), vuelve a arrancar hasta que inicie correctamente.

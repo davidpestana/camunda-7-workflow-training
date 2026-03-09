@@ -28,6 +28,8 @@ Visual Studio Code puede ampliarse mediante **extensiones** que añaden soporte 
 
 Instalar estas extensiones desde el principio evita muchos problemas durante los laboratorios.
 
+**Entorno (Codespaces):** Si usas **GitHub Codespaces**, Java 17 y Maven suelen estar ya instalados. Aun así, **es importante** seguir los pasos 02 y 03 (verificar Java y Maven) antes de crear el proyecto; así detectas cualquier problema de entorno desde el primer momento.
+
 ---
 
 ## 📍 Abrir el panel de extensiones

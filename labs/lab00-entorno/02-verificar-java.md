@@ -16,7 +16,7 @@ En este curso utilizaremos:
 Java 17
 ```
 
-Antes de continuar es necesario verificar que Java está instalado correctamente en el entorno.
+Antes de continuar es necesario verificar que Java está instalado correctamente en el entorno. En **Codespaces** suele venir Java 17 preinstalado; este paso confirma que el entorno es el esperado y evita fallos al compilar más adelante.
 
 ---
 

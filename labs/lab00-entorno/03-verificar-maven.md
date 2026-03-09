@@ -2,7 +2,7 @@
 
 ## 🎯 Objetivo
 
-Comprobar que **Maven** está instalado y disponible en el entorno para poder compilar y ejecutar el proyecto.
+Comprobar que **Maven** está instalado y disponible en el entorno para poder compilar y ejecutar el proyecto. En **Codespaces** Maven suele estar ya instalado; verificar aquí evita errores al crear y compilar **workflow-app** en los siguientes pasos.
 
 ---
 

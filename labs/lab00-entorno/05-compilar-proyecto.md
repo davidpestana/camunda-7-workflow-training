@@ -2,35 +2,22 @@
 
 ## 🎯 Objetivo
 
-Compilar la aplicación backend utilizando **Maven** para verificar que el proyecto puede construirse correctamente.
+Compilar la aplicación backend (**workflow-app**) utilizando **Maven** para verificar que el proyecto puede construirse correctamente.
 
 ---
 
 ## 🧠 Contexto
 
-El proyecto backend está basado en **Spring Boot** y utiliza **Maven** como herramienta de construcción.
-
-Maven se encarga de:
-
-* descargar dependencias
-* compilar el código Java
-* ejecutar tests
-* generar el artefacto de la aplicación
-
-El archivo que define el proyecto Maven es:
-
-```
-pom.xml
-```
+En el paso anterior creaste el proyecto **workflow-app**. En este paso lo compilas para comprobar que el entorno funciona. Solo necesitas ejecutar el comando de Maven; el resto del proyecto Maven (estructura, fases, etc.) se explora en el **lab03**.
 
 ---
 
-## 📍 Ir al directorio del backend
+## 📍 Ir al directorio workflow-app
 
-Abre una **terminal** en VS Code (menú **Terminal** → **New Terminal**). Desde la **raíz del repositorio** (donde están el README, las carpetas **labs** y **backend**), cambia al directorio del backend:
+Abre una **terminal** en VS Code (menú **Terminal** → **New Terminal**). Desde la **raíz del repositorio** (donde están el README, las carpetas **labs** y **workflow-app**), cambia al directorio del proyecto:
 
 ```bash
-cd backend
+cd workflow-app
 ```
 
 ---
@@ -45,21 +32,9 @@ mvn clean install
 
 ---
 
-## 📦 Qué hace este comando
+## 📌 Nota
 
-El comando ejecuta varias fases del ciclo de vida de Maven:
-
-| Fase    | Descripción                                  |
-| ------- | -------------------------------------------- |
-| clean   | elimina compilaciones anteriores             |
-| compile | compila el código Java                       |
-| test    | ejecuta los tests                            |
-| package | crea el artefacto de la aplicación           |
-| install | instala el artefacto en el repositorio local |
-
-Durante este proceso Maven descargará las dependencias necesarias desde los repositorios remotos.
-
-La primera compilación puede tardar unos minutos.
+La primera compilación puede tardar unos minutos (Maven descargará dependencias). Si todo va bien verás **BUILD SUCCESS**. En el **lab03** explorarás la estructura del proyecto Maven y qué hace cada parte.
 
 ---
 
@@ -97,13 +72,10 @@ Debería aparecer un archivo `.jar` correspondiente a la aplicación.
 
 ---
 
-## ⚠️ Posibles problemas
+## ⚠️ Si la compilación falla
 
-Si aparece algún error:
-
-* verificar que **Java 17** está instalado
-* verificar que **Maven** funciona correctamente
-* comprobar que el comando se ejecuta **dentro** del directorio `backend` (en la terminal deberías ver algo como `.../backend` en el prompt)
+* Comprueba que estás **dentro** de `workflow-app` y que **Java 17** y **Maven** están bien (pasos 02 y 03).
+* **Workaround:** Si el error está relacionado con la versión de Spring Boot o del parent, abre **workflow-app/pom.xml** y revisa el `<parent>`: debe ser `spring-boot-starter-parent` con **version 2.7.18**. Si el archetype generó otra (p. ej. 3.x), cámbiala a **2.7.18**. Revisa también que `<java.version>` sea **17**. Guarda y ejecuta de nuevo `mvn clean install`.
 
 ---
 
@@ -113,4 +85,4 @@ El paso se considera completado cuando:
 
 * el comando `mvn clean install` finaliza correctamente
 * aparece el mensaje **BUILD SUCCESS**
-* existe el directorio `target` en el proyecto backend.
+* existe el directorio `target` en el proyecto workflow-app.
